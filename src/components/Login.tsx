@@ -2,7 +2,7 @@ import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-const CND_URL = "https://kvgzqoewvhikvntvnitb.supabase.co/storage/v1/object/public/uploads/"
+const CND_URL = process.env.VITE_CDN_URL
 export const Login = () => {
   const user = useUser()
   const supabase = useSupabaseClient()
