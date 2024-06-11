@@ -1,8 +1,9 @@
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { supabase } from '../services/supabase.service'
 
-const CND_URL = process.env.VITE_CDN_URL
+const CND_URL = import.meta.env.VITE_CDN_URL
 export const Login = () => {
   const user = useUser()
   const supabase = useSupabaseClient()
@@ -24,7 +25,11 @@ export const Login = () => {
   }
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut()
+    try {
+      const { error } = await supabase.auth.signOut()
+    } catch (error) {
+      alert(error.message)
+    }
   }
 
   const uploadImage = async (e) => {
