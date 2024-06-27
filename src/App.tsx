@@ -12,10 +12,10 @@ function App() {
 
     <main className='flex items-center justify-center mx-20 my-5'>
       <div className='flex flex-col max-w-xl gap-4 w-full'>
-        {/* <TodoList></TodoList>
+        <TodoList></TodoList>
         <FileUpload></FileUpload>
         <Login />
-        <LoginWithPassword /> */}
+        <LoginWithPassword />
         <VideoUpload />
       </div>
     </main>
